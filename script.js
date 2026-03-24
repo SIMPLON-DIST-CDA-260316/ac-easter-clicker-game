@@ -3,8 +3,8 @@ const niveau1 = document.querySelector(".niveau1");
 const niveau2 = document.querySelector(".niveau2");
 const niveau3 = document.querySelector(".niveau3");
 const gameArea = document.querySelector(".game-area");
-const scoreDisplay1 = document.querySelector("#score1");
-const timerDisplay1 = document.querySelector("#timer1");
+const scoreDisplay = document.querySelector("#score");
+const timerDisplay = document.querySelector("#timer");
 
 
 const btnNiveau1 = document.querySelector(".btn-niveau1");
@@ -12,19 +12,24 @@ const btnNiveau2 = document.querySelector(".btn-niveau2");
 const btnNiveau3 = document.querySelector(".btn-niveau3");
 
 btnNiveau1.addEventListener("click", () => {
-  accueil.style.display = "none";
-  niveau1.style.display = "block";
+    accueil.style.display = "none";
+    niveau1.style.display = "block";
+    startGame(60);
 });
 
 btnNiveau2.addEventListener("click", () => {
   accueil.style.display = "none";
   niveau2.style.display = "block";
+  startGame(30);
 });
+
 
 btnNiveau3.addEventListener("click", () => {
   accueil.style.display = "none";
   niveau3.style.display = "block";
+  startGame(15);
 });
+
 
 imgArray = [
     "images/egg1.png",
@@ -35,19 +40,24 @@ imgArray = [
     "images/redcandy.png",
 ];
 
-
 function randomEgg() {
     const randomIndex = Math.floor(Math.random() * imgArray.length);
     return imgArray[randomIndex];
 }
-let score = 0;
-let timer = 60;
 
-showTimer();
+function startGame(countdownTime) {
+    score = 0;
+    timer = countdownTime;
+    scoreDisplay.textContent = score;
+    timerDisplay.textContent = timer;
+    showTimer();
+    eggInterval = setInterval(showEgg, 1500);
+}
+
 function showTimer() {
     const timerInterval = setInterval(() => {
         timer--;
-        timerDisplay1.textContent = timer;
+        timerDisplay.textContent = timer;
         if (timer <= 0) {
             clearInterval(timerInterval);
             clearInterval(eggInterval);
@@ -79,9 +89,7 @@ function showEgg() {
         else {
             score++;
         }
-        scoreDisplay1.textContent = score;
+        scoreDisplay.textContent = score;
         
     });
 }
-
-eggInterval = setInterval(showEgg, 1500);

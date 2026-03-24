@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <section class="accueil">
+            <h1>Trouvez les œufs de Pâques !</h1>
+            <p>Choisissez votre niveau de difficulté :</p>
+            <div class="button-container">
+                <button class="btn-niveau1">🐥 Petit poussin</button>
+                <button class="btn-niveau2">🐰 Lapin malin</button>
+                <button class="btn-niveau3">🥚 Chasseur d’œufs</button>
+            </div>
+        </section>
+        <section class="niveau1" style="display: none;">
+            <h2>Niveau 1 : Petit poussin</h2>
+            <p>Cliquez sur les œufs pour les collecter !</p>
+            <div class="game-area">
+                <!-- Les œufs seront générés ici -->
+            </div>
+            <p>Score : <span id="score1">0</span></p>
+            <p>Timer : <span id="timer1">60</span></p>
+        </section>
+        <section class="niveau2" style="display: none;">
+            <h2>Niveau 2 : Lapin malin</h2>
+            <p>Cliquez sur les œufs pour les collecter !</p>
+            <div class="game-area">
+                <!-- Les œufs seront générés ici -->
+            </div>
+            <p>Score : <span id="score2">0</span></p>
+        </section>
+        <section class="niveau3" style="display: none;">
+            <h2>Niveau 3 : Chasseur d’œufs</h2>
+            <p>Cliquez sur les œufs pour les collecter !</p>
+            <div class="game-area">
+                <!-- Les œufs seront générés ici -->
+            </div>
+            <p>Score : <span id="score3">0</span></p>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="script.js"></script>
+</body>
